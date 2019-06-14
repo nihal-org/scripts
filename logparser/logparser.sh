@@ -210,4 +210,20 @@ echo "Total requests that failed with HTTP 404 errors when requesting the manife
 echo
 grep "|HTTP/1.0|404|" request.log | grep "/api/docker/docker/v2/nginx/" | wc -l
 echo
+echo "Total requests that failed with HTTP 500 errors when requesting a Layer"
+echo
+grep "|HTTP/1.0|500|" request.log | grep "/api/docker/docker-local/v2/nginx/blobs/" | wc -l
+echo
+echo "Total requests that failed with HTTP 401 errors when requesting a Layer"
+echo
+grep "|HTTP/1.0|401|" request.log | grep "/api/docker/docker-local/v2/nginx/blobs/" | wc -l
+echo
+echo "Total requests that failed with HTTP 403 errors when requesting a Layer"
+echo
+grep "|HTTP/1.0|403|" request.log | grep "/api/docker/docker-local/v2/nginx/blobs/" | wc -l
+echo
+echo "Total requests that failed with HTTP 404 errors when requesting a Layer"
+echo
+grep "|HTTP/1.0|404|" request.log | grep "/api/docker/docker-local/v2/nginx/blobs/" | wc -l
+echo
 exit 0
