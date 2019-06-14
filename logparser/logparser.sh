@@ -3,31 +3,31 @@ echo "Here are the number of requests that took more than 500 milliseconds for t
 echo
 <request.log awk -F\| '{if($2>500)print$2 $7 $9}' | grep "/api/docker/null/v2/token" | wc -l
 echo
-echo "Here are the number of requests that took more than 1 second"
+echo "Here are the number of requests that took more than 1 second for token request"
 echo
 <request.log awk -F\| '{if($2>1000)print$2 $7 $9}' | grep "/api/docker/null/v2/token" | wc -l
 echo
-echo "Here are the number of requests that took more than 3 seconds"
+echo "Here are the number of requests that took more than 3 seconds for token request"
 echo
 <request.log awk -F\| '{if($2>3000)print$2 $7 $9}' | grep "/api/docker/null/v2/token" | wc -l
 echo
-echo "Here are the number of requests that took more than 6 seconds"
+echo "Here are the number of requests that took more than 6 seconds for token request"
 echo
 <request.log awk -F\| '{if($2>6000)print$2 $7 $9}' | grep "/api/docker/null/v2/token" | wc -l
 echo
-echo "Here are the number of requests that took more than 10 seconds"
+echo "Here are the number of requests that took more than 10 seconds for token request"
 echo
 <request.log awk -F\| '{if($2>10000)print$2 $7 $9}' | grep "/api/docker/null/v2/token" | wc -l
 echo
-echo "Here are the number of requests that took more than 20 seconds"
+echo "Here are the number of requests that took more than 20 seconds for token request"
 echo
 <request.log awk -F\| '{if($2>20000)print$2 $7 $9}' | grep "/api/docker/null/v2/token" | wc -l
 echo
-echo "Here are the number of requests that took more than 30 seconds"
+echo "Here are the number of requests that took more than 30 seconds for token request"
 echo
 <request.log awk -F\| '{if($2>30000)print$2 $7 $9}' | grep "/api/docker/null/v2/token" | wc -l
 echo
-echo "Here are the number of requests that took more than 35 seconds"
+echo "Here are the number of requests that took more than 35 seconds for token request"
 echo
 <request.log awk -F\| '{if($2>35000)print$2 $7 $9}' | grep "/api/docker/null/v2/token" | wc -l
 echo
@@ -35,31 +35,31 @@ echo "Here are the number of requests that took more than 500 milliseconds when 
 echo
 <request.log awk -F\| '{if($2>500)print$2 $7 $9}' | grep "/api/docker/docker/v2/nginx/manifests/" | wc -l
 echo
-echo "Here are the number of requests that took more than 1 second"
+echo "Here are the number of requests that took more than 1 second when requesting the manifest"
 echo
 <request.log awk -F\| '{if($2>1000)print$2 $7 $9}' | grep "/api/docker/docker/v2/nginx/manifests/" | wc -l
 echo
-echo "Here are the number of requests that took more than 3 seconds"
+echo "Here are the number of requests that took more than 3 seconds when requesting the manifest"
 echo
 <request.log awk -F\| '{if($2>3000)print$2 $7 $9}' | grep "/api/docker/docker/v2/nginx/manifests/" | wc -l
 echo
-echo "Here are the number of requests that took more than 6 seconds"
+echo "Here are the number of requests that took more than 6 seconds when requesting the manifest"
 echo
 <request.log awk -F\| '{if($2>6000)print$2 $7 $9}' | grep "/api/docker/docker/v2/nginx/manifests/" | wc -l
 echo
-echo "Here are the number of requests that took more than 10 seconds"
+echo "Here are the number of requests that took more than 10 seconds when requesting the manifest"
 echo
 <request.log awk -F\| '{if($2>10000)print$2 $7 $9}' | grep "/api/docker/docker/v2/nginx/manifests/" | wc -l
 echo
-echo "Here are the number of requests that took more than 20 seconds"
+echo "Here are the number of requests that took more than 20 seconds when requesting the manifest"
 echo
 <request.log awk -F\| '{if($2>20000)print$2 $7 $9}' | grep "/api/docker/docker/v2/nginx/manifests/" | wc -l
 echo
-echo "Here are the number of requests that took more than 30 seconds"
+echo "Here are the number of requests that took more than 30 seconds when requesting the manifest"
 echo
 <request.log awk -F\| '{if($2>30000)print$2 $7 $9}' | grep "/api/docker/docker/v2/nginx/manifests/" | wc -l
 echo
-echo "Here are the number of requests that took more than 35 seconds"
+echo "Here are the number of requests that took more than 35 seconds when requesting the manifest"
 echo
 <request.log awk -F\| '{if($2>35000)print$2 $7 $9}' | grep "/api/docker/docker/v2/nginx/manifests/" | wc -l
 echo
