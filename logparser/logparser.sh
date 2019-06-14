@@ -148,7 +148,7 @@ echo "Here are the number of requests that took more than 35 seconds for Layer s
 echo
 <request.log awk -F\| '{if($2>35000)print$2 $7 $9}' | grep "sha256:743f2d6c1f65c793009f30acb07845ba2ef968192732afdab2ecf9a475515393" | wc -l
 echo
-echo "Here are the number of requests that took more than 1 second for Layer sha256:62c261073ecffe22a28f2ba67760a9320bc4bfe8136a83ba9b579983346564be which is 21.45 MB"
+echo "Here are the number of requests that took more than 1 second for Layer sha256:62c261073ecffe22a28f2ba67760a9320bc4bfe8136a83ba9b579983346564be which is 6.26 KB"
 echo
 <request.log awk -F\| '{if($2>1000)print$2 $7 $9}' | grep "sha256:62c261073ecffe22a28f2ba67760a9320bc4bfe8136a83ba9b579983346564be" | wc -l
 echo
@@ -196,34 +196,43 @@ echo
 echo
 echo "Total requests that failed with HTTP 500 errors when requesting the manifest"
 echo
-grep "|HTTP/1.0|500|" request.log | grep "/api/docker/docker/v2/nginx/" | wc -l
+grep "|HTTP/1.0|500|" request.log | grep "/api/docker/docker/v2/nginx/manifests/" | wc -l
 echo
 echo "Total requests that failed with HTTP 401 errors when requesting the manifest"
 echo
-grep "|HTTP/1.0|401|" request.log | grep "/api/docker/docker/v2/nginx/" | wc -l
+grep "|HTTP/1.0|401|" request.log | grep "/api/docker/docker/v2/nginx/manifests/" | wc -l
 echo
 echo "Total requests that failed with HTTP 403 errors when requesting the manifest"
 echo
-grep "|HTTP/1.0|403|" request.log | grep "/api/docker/docker/v2/nginx/" | wc -l
+grep "|HTTP/1.0|403|" request.log | grep "/api/docker/docker/v2/nginx/manifests/" | wc -l
 echo
 echo "Total requests that failed with HTTP 404 errors when requesting the manifest"
 echo
-grep "|HTTP/1.0|404|" request.log | grep "/api/docker/docker/v2/nginx/" | wc -l
+grep "|HTTP/1.0|404|" request.log | grep "/api/docker/docker/v2/nginx/manifests/" | wc -l
+echo
 echo
 echo "Total requests that failed with HTTP 500 errors when requesting a Layer"
 echo
-grep "|HTTP/1.0|500|" request.log | grep "/api/docker/docker-local/v2/nginx/blobs/" | wc -l
+grep "|HTTP/1.0|500|" request.log | grep "/api/docker/docker/v2/nginx/blobs/" | wc -l
 echo
 echo "Total requests that failed with HTTP 401 errors when requesting a Layer"
 echo
-grep "|HTTP/1.0|401|" request.log | grep "/api/docker/docker-local/v2/nginx/blobs/" | wc -l
+grep "|HTTP/1.0|401|" request.log | grep "/api/docker/docker/v2/nginx/blobs/" | wc -l
 echo
 echo "Total requests that failed with HTTP 403 errors when requesting a Layer"
 echo
-grep "|HTTP/1.0|403|" request.log | grep "/api/docker/docker-local/v2/nginx/blobs/" | wc -l
+grep "|HTTP/1.0|403|" request.log | grep "/api/docker/docker/v2/nginx/blobs/" | wc -l
 echo
 echo "Total requests that failed with HTTP 404 errors when requesting a Layer"
 echo
-grep "|HTTP/1.0|404|" request.log | grep "/api/docker/docker-local/v2/nginx/blobs/" | wc -l
+grep "|HTTP/1.0|404|" request.log | grep "/api/docker/docker/v2/nginx/blobs/" | wc -l
 echo
+echo "Total number of requests for a Layer"
+grep "/api/docker/docker/v2/nginx/blobs/" request.log | wc -l
+echo
+echo "Total number of requests for Token"
+grep "/api/docker/null/" request.log | wc -l
+echo
+echo "Total number of requests for manifest"
+grep "/api/docker/docker/v2/nginx/manifests/" request.log | wc -l
 exit 0
